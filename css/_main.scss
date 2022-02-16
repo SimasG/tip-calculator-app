@@ -28,14 +28,25 @@ main {
                 padding: 1rem 1.7rem;
                 border-radius: 5px;
                 .bill-input {
+                    // outline rule removes annoying default input outline
+                    outline: none;            
+                    width: 80%;
                     border: none;
                     background-color: transparent;
                     text-align: right;
                     font-size: 2.4rem;
+                    color: #00474B;
+                    font-family: 'Space Mono', monospace;
+                    font-weight: 700;
                     &::placeholder {
                         color: #00474B;
                         font-family: 'Space Mono', monospace;
                         font-weight: 700;
+                        border: none;
+                        &:active {
+                            border: none;
+                            outline: none;
+                        }
                     }
                 }
             }
@@ -58,10 +69,6 @@ main {
                     font-size: 2.4rem;
                     padding: 0.6rem 0;
                 }
-                .tip-option-3 {
-                    background-color: #26C2AE;
-                    color: #00474B;
-                }
                 .tip-option-6 {
                     background-color: #F3F9FA;
                     color: #547878;
@@ -82,10 +89,15 @@ main {
                 padding: 1rem 1.7rem;
                 border-radius: 5px;
                 .people-number-input {
+                    outline: none;            
+                    width: 80%;
                     border: none;
                     background-color: transparent;
                     text-align: right;
                     font-size: 2.4rem;
+                    color: #00474B;
+                    font-family: 'Space Mono', monospace;
+                    font-weight: 700;
                     &::placeholder {
                         color: #00474B;
                         font-family: 'Space Mono', monospace;

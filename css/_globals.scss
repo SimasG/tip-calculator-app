@@ -35,7 +35,22 @@ h1, h2, h3, p, button, ul, li {
     font-weight: 700;
 }
 
+p {
+    font-size: 1.3rem;
+}
+
 h3 {
     color: #5E7A7D;
     font-size: 1.6rem;
+}
+
+input, button {
+    cursor: pointer;
+}
+
+input[type="text"]::-webkit-search-decoration,
+input[type="text"]::-webkit-search-cancel-button,
+input[type="text"]::-webkit-search-results-button,
+input[type="text"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
 }

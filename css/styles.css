@@ -32,9 +32,24 @@ h1, h2, h3, p, button, ul, li {
   font-weight: 700;
 }
 
+p {
+  font-size: 1.3rem;
+}
+
 h3 {
   color: #5E7A7D;
   font-size: 1.6rem;
+}
+
+input, button {
+  cursor: pointer;
+}
+
+input[type="text"]::-webkit-search-decoration,
+input[type="text"]::-webkit-search-cancel-button,
+input[type="text"]::-webkit-search-results-button,
+input[type="text"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
 
 header .logo {
@@ -83,34 +98,63 @@ main .settings .bill .bill-form {
 }
 
 main .settings .bill .bill-form .bill-input {
+  outline: none;
+  width: 80%;
   border: none;
   background-color: transparent;
   text-align: right;
   font-size: 2.4rem;
+  color: #00474B;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
 }
 
 main .settings .bill .bill-form .bill-input::-webkit-input-placeholder {
   color: #00474B;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
+  border: none;
 }
 
 main .settings .bill .bill-form .bill-input:-ms-input-placeholder {
   color: #00474B;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
+  border: none;
 }
 
 main .settings .bill .bill-form .bill-input::-ms-input-placeholder {
   color: #00474B;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
+  border: none;
 }
 
 main .settings .bill .bill-form .bill-input::placeholder {
   color: #00474B;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
+  border: none;
+}
+
+main .settings .bill .bill-form .bill-input::-webkit-input-placeholder:active {
+  border: none;
+  outline: none;
+}
+
+main .settings .bill .bill-form .bill-input:-ms-input-placeholder:active {
+  border: none;
+  outline: none;
+}
+
+main .settings .bill .bill-form .bill-input::-ms-input-placeholder:active {
+  border: none;
+  outline: none;
+}
+
+main .settings .bill .bill-form .bill-input::placeholder:active {
+  border: none;
+  outline: none;
 }
 
 main .settings .tip-percentage {
@@ -138,11 +182,6 @@ main .settings .tip-percentage .tip-options-container .tip-option {
   color: #FFFFFF;
   font-size: 2.4rem;
   padding: 0.6rem 0;
-}
-
-main .settings .tip-percentage .tip-options-container .tip-option-3 {
-  background-color: #26C2AE;
-  color: #00474B;
 }
 
 main .settings .tip-percentage .tip-options-container .tip-option-6 {
@@ -175,10 +214,15 @@ main .settings .number-of-people .people-number-form {
 }
 
 main .settings .number-of-people .people-number-form .people-number-input {
+  outline: none;
+  width: 80%;
   border: none;
   background-color: transparent;
   text-align: right;
   font-size: 2.4rem;
+  color: #00474B;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
 }
 
 main .settings .number-of-people .people-number-form .people-number-input::-webkit-input-placeholder {
