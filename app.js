@@ -1,26 +1,26 @@
 class Calculator {
     // taking in all the inputs and functions for the calculator
-    constructor(totalBill, numberOfPeople) {
+    constructor(totalBill, tipPercentage, numberOfPeople) {
         // this.totalBill(that's been previously declared) = totalBill(that's going to be reused for "new" functions)
         // "this" here refers to the window object
         this.totalBill = totalBill;
         this.numberOfPeople = numberOfPeople;
         // tip percentage hasn't been previously declared - could be an issue
-        // this.tipPercentage = tipPercentage;
+        this.tipPercentage = tipPercentage;
         // this.clear();
     }
 
     // clears all previous inputs
-    // clear() {
-    //     this.totalBillInput = ' ';
-    //     this.numberOfPeople = ' ';
-    //     this.tipPercentage = undefined;
-    // }
+    clear() {
+        this.totalBillInput = '';
+        this.numberOfPeople = '';
+        this.tipPercentage = undefined;
+    }
 
     // calculates tip per person
     computeTipPerPerson() {
         // tipButtons.forEach(button =>  console.log(button.innerText.slice(0, -1)));
-        // return (this.totalBill * this.tipPercentage) / this.numberOfPeople;
+        return (this.totalBill * this.tipPercentage) / this.numberOfPeople;
         return this.totalBill / this.numberOfPeople;
     }
 
@@ -48,7 +48,8 @@ const tipButtons = document.querySelectorAll('[data-tip]'); //6 tip buttons
 const tipAmountPerPerson = document.querySelector('[data-total-tip-per-person]'); //tip amount per person
 const totalAmountPerPerson = document.querySelector('[data-total-amount-per-person]'); //total amount per person
 
-const calculator = new Calculator (totalBill, numberOfPeople) // tipButtons or tipPercentage?
+
+const calculator = new Calculator (totalBill, numberOfPeople, tipPercentage) // tipButtons or tipPercentage?
 
 
 // function handleBillPerPerson (totalBill, numberOfPeople) {

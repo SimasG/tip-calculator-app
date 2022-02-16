@@ -38,12 +38,12 @@
       <article class="tip-percentage">
         <h3>Select Tip %</h3>
         <div class="tip-options-container">
-          <button class="tip-option tip-option-1" data-tip>5%</button>
-          <button class="tip-option tip-option-2" data-tip>10%</button>
-          <button class="tip-option tip-option-3" data-tip>15%</button>
-          <button class="tip-option tip-option-4" data-tip>25%</button>
-          <button class="tip-option tip-option-5" data-tip>50%</button>
-          <button class="tip-option tip-option-6" data-tip>Custom</button>  
+          <button class="tip-option tip-option-1" data-tip onClick="calculateTip(0.05)">5%</button>
+          <button class="tip-option tip-option-2" data-tip onClick="calculateTip(0.10)">10%</button>
+          <button class="tip-option tip-option-3" data-tip onClick="calculateTip(0.15)">15%</button>
+          <button class="tip-option tip-option-4" data-tip onClick="calculateTip(0.25)">25%</button>
+          <button class="tip-option tip-option-5" data-tip onClick="calculateTip(0.50)">50%</button>
+          <input type="number" class="tip-option input-tip" data-tip />  
         </div>
       </article>
 
@@ -87,6 +87,6 @@
     </section>
   </main>
   
-  <script src="app.js"></script>
+  <script src="app2.js"></script>
 </body>
 </html>

@@ -54,3 +54,16 @@ input[type="text"]::-webkit-search-results-button,
 input[type="text"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
+
+input[type="number"]::-webkit-search-decoration,
+input[type="number"]::-webkit-search-cancel-button,
+input[type="number"]::-webkit-search-results-button,
+input[type="number"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
