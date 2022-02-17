@@ -30,7 +30,7 @@ body {
     background: #C5E4E7;
 }
 
-h1, h2, h3, p, button, ul, li {
+h1, h2, h3, p, button, ul, li, ::placeholder {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
 }

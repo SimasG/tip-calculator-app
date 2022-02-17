@@ -43,6 +43,7 @@ main {
                         font-family: 'Space Mono', monospace;
                         font-weight: 700;
                         border: none;
+                        opacity: 0.5;
                         &:active {
                             border: none;
                             outline: none;
@@ -68,6 +69,19 @@ main {
                     color: #FFFFFF;
                     font-size: 2.4rem;
                     padding: 0.6rem 0;
+                }
+                .tip-option.input-tip {
+                    width: 100%;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #F3F9FA;
+                    color: #FFFFFF;
+                    font-size: 2.4rem;
+                    padding: 0.6rem 0;
+                    &::placeholder {
+                        color: #547878;
+                        text-align: center;
+                    }
                 }
                 .tip-option-6 {
                     background-color: #F3F9FA;
@@ -102,6 +116,7 @@ main {
                         color: #00474B;
                         font-family: 'Space Mono', monospace;
                         font-weight: 700;
+                        opacity: 0.5;
                     }
                 }
             }

@@ -1,8 +1,9 @@
-// TODO: must always have two decimals after the number (not more or less) -> DONE
-// TODO: fix value types (no infinity, NaN, etc.) -> DONE
-// TODO: fix negative value display -> DONE
+// TODO: Must always have two decimals after the number (not more or less) -> DONE
+// TODO: Fix value types (no infinity, NaN, etc.) -> DONE
+// TODO: Fix negative value display -> DONE
 // TODO: Fix the custom tip button -> DONE
 // TODO: Build the reset button functionality -> DONE
+// TODO: Fix the layout
 
 const tipAmountPerPerson = document.querySelector('[data-total-tip-per-person]');
 const totalAmountPerPerson = document.querySelector('[data-total-amount-per-person]');
