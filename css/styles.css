@@ -27,22 +27,22 @@ body {
   background: #C5E4E7;
 }
 
-h1, h2, h3, p, button, ul, li, ::-webkit-input-placeholder {
+h1, h2, h3, p, button, ul, li, input, ::-webkit-input-placeholder {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
 }
 
-h1, h2, h3, p, button, ul, li, :-ms-input-placeholder {
+h1, h2, h3, p, button, ul, li, input, :-ms-input-placeholder {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
 }
 
-h1, h2, h3, p, button, ul, li, ::-ms-input-placeholder {
+h1, h2, h3, p, button, ul, li, input, ::-ms-input-placeholder {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
 }
 
-h1, h2, h3, p, button, ul, li, ::placeholder {
+h1, h2, h3, p, button, ul, li, input, ::placeholder {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
 }
@@ -221,9 +221,10 @@ main .settings .tip-percentage .tip-options-container .tip-option.input-tip {
   border: none;
   border-radius: 5px;
   background-color: #F3F9FA;
-  color: #FFFFFF;
+  color: #547878;
   font-size: 2.4rem;
   padding: 0.6rem 0;
+  text-align: center;
 }
 
 main .settings .tip-percentage .tip-options-container .tip-option.input-tip::-webkit-input-placeholder {

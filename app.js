@@ -3,7 +3,7 @@
 // TODO: Fix negative value display -> DONE
 // TODO: Fix the custom tip button -> DONE
 // TODO: Build the reset button functionality -> DONE
-// TODO: Fix the layout
+// TODO: Fix the layout -> DONE
 
 const tipAmountPerPerson = document.querySelector('[data-total-tip-per-person]');
 const totalAmountPerPerson = document.querySelector('[data-total-amount-per-person]');
@@ -74,8 +74,6 @@ peopleNumberInputForm.addEventListener('input', () => {
 
 
 // reset button functionality
-
-// why does the function not work?
 function reset () {
     totalAmountPerPerson.innerHTML = `$${Number.parseFloat(0).toFixed(2)}`;
     tipAmountPerPerson.innerHTML = `$${Number.parseFloat(0).toFixed(2)}`;
