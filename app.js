@@ -1,93 +1,71 @@
-class Calculator {
-    // taking in all the inputs and functions for the calculator
-    constructor(totalBill, tipPercentage, numberOfPeople) {
-        // this.totalBill(that's been previously declared) = totalBill(that's going to be reused for "new" functions)
-        // "this" here refers to the window object
-        this.totalBill = totalBill;
-        this.numberOfPeople = numberOfPeople;
-        // tip percentage hasn't been previously declared - could be an issue
-        this.tipPercentage = tipPercentage;
-        // this.clear();
+// TODO: must always have two decimals after the number (not more or less) -> DONE
+// TODO: fix value types (no infinity, NaN, etc.) -> TODO
+// TODO: fix negative value display
+// TODO: Fix the custom tix button
+// TODO: Build the reset button functionality
+
+const tipAmountPerPerson = document.querySelector('[data-total-tip-per-person]');
+const totalAmountPerPerson = document.querySelector('[data-total-amount-per-person]');
+const billInputForm = document.querySelector('.bill-input');
+const tipPercentageInput = document.querySelector('.input-tip');
+const peopleNumberInputForm = document.querySelector('.people-number-input');
+
+function calculateTotals (tipPercentage, people, bill) {
+    let billPerPerson = Number.parseFloat(bill*(1 + tipPercentage) / people).toFixed(2);
+    if (billPerPerson === Infinity || billPerPerson === NaN) {
+        console.log('heyooo infinite bill');
+        billPerPerson = 0;
+        // totalAmountPerPerson.innerHTML = `$0.00`;
     }
 
-    // clears all previous inputs
-    clear() {
-        this.totalBillInput = '';
-        this.numberOfPeople = '';
-        this.tipPercentage = undefined;
+    if (!Number.isFinite(billPerPerson) && people === 0 || people === '0' || people === '') {
+        console.log('bill per person is infinite!')
+        billPerPerson = Number.parseFloat(0).toFixed(2);
+    } else {
+        console.log('bill per person is finite!')
+        billPerPerson = Number.parseFloat(bill*(1 + tipPercentage) / people).toFixed(2);
     }
 
-    // calculates tip per person
-    computeTipPerPerson() {
-        // tipButtons.forEach(button =>  console.log(button.innerText.slice(0, -1)));
-        return (this.totalBill * this.tipPercentage) / this.numberOfPeople;
-        return this.totalBill / this.numberOfPeople;
+    let tipPerPerson = Number.parseFloat((tipPercentage*bill) / people).toFixed(2);
+    if (!Number.isFinite(tipPerPerson) && tipPercentage === 0 || tipPercentage === '0') {
+        console.log('heyooo infinite tip')
+        tipPerPerson = 0;
     }
 
-    // calculates total bill per person
-    computeBillPerPerson() {
-        
-    }
-
-    // displays tip per person (& bill per person?)
-    updateDisplay() {
-
-    }
+    totalAmountPerPerson.innerHTML = `$${billPerPerson}`;
+    tipAmountPerPerson.innerHTML = `$${tipPerPerson}`;
 }
 
+// capturing the values into variables which will be used in the main calculation
 
-// Global HTML Variables
-// const billPerPerson = document.querySelector('.total-amount-per-person-heading');
+// capturing the CUSTOM tip input value into "tipPercentage"
+let tipPercentage = 0;
+tipPercentageInput.addEventListener('input', () => {
+    tipPercentage = tipPercentageInput.value;
+    calculateTotals(tipPercentage, people, total);
+});
 
+// capturing the tip button value into "tipPercentage"
+const calculateTip = function (percentage) {
+    tipPercentage = percentage;
+    calculateTotals(tipPercentage, people, total);
+}
 
-// using data attributes to keep html used for css (tags, classes, id) and javascript (data attributes) separate
-
-const totalBill = document.querySelectorAll('[data-input-bill]'); //total bill
-const numberOfPeople = document.querySelectorAll('[data-input-people]'); //number of people
-const tipButtons = document.querySelectorAll('[data-tip]'); //6 tip buttons
-const tipAmountPerPerson = document.querySelector('[data-total-tip-per-person]'); //tip amount per person
-const totalAmountPerPerson = document.querySelector('[data-total-amount-per-person]'); //total amount per person
-
-
-const calculator = new Calculator (totalBill, numberOfPeople, tipPercentage) // tipButtons or tipPercentage?
-
-
-// function handleBillPerPerson (totalBill, numberOfPeople) {
-//     billPerPerson.innerText = `$${totalBill/numberOfPeople}`;
+// const calculateTip = (percentage) => {
+//     tipPercentage = percentage;
+//     calculateTotals(tipPercentage, people, total);
 // }
 
-// Event Listeners
-tipButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        let tipPercentage = e.target.classList;
-        if (tipPercentage.contains('tip-option-1')) {
-            tipPercentage = 0.05;
-        } else if (tipPercentage.contains('tip-option-2')) {
-            tipPercentage = 0.1;
-        }  else if (tipPercentage.contains('tip-option-3')) {
-            tipPercentage = 0.15;
-        } else if (tipPercentage.contains('tip-option-4')) {
-            tipPercentage = 0.25;
-        } else if (tipPercentage.contains('tip-option-5')) {
-            tipPercentage = 0.5;
-        } else if (tipPercentage.contains('tip-option-6')) {
-            tipPercentage = 0.6;
-        }
-        calculator.computeTipPerPerson(100, 5, tipPercentage)
-        console.log(tipPercentage);
-    })
+// capturing the initial bill input value into "total"
+let total = 0;
+billInputForm.addEventListener('input', () => {
+    total = billInputForm.value;
+    calculateTotals(tipPercentage, people, total);
 })
 
-// const billInputForm = document.querySelector('.bill-input');
-
-// billInputForm.addEventListener('input', (e) => {
-//     const totalBill = e.target.value;
-//     console.log(totalBill);
-// })
-
-// const peopleNumberInputForm = document.querySelector('.people-number-input');
-
-// peopleNumberInputForm.addEventListener('input', (e) => {
-//     const numberOfPeople = e.target.value;
-//     console.log(numberOfPeople);
-// })
+// capturing the number of people input value into "people"
+let people = 0;
+peopleNumberInputForm.addEventListener('input', () => {
+    people = peopleNumberInputForm.value;
+    calculateTotals(tipPercentage, people, total);
+})
