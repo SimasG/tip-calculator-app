@@ -15,22 +15,18 @@ const resetBtn = document.querySelector('.reset-button');
 function calculateTotals (tipPercentage, people, bill) {
     let billPerPerson
 
-    if (!Number.isFinite(billPerPerson) && people === 0 || people === '0' || people === '' || people < 0 || isNaN(people)) {
-        console.log('bill per person is infinite!')
+    if (!Number.isFinite(billPerPerson) && people === 0 || people === '0' || people === '' || people < 0 || isNaN(people) || tipPercentage < 0 || bill < 0) {
         billPerPerson = Number.parseFloat(0).toFixed(2);
     } else {
-        console.log('bill per person is finite!')
         billPerPerson = Number.parseFloat(bill*(1 + tipPercentage) / people).toFixed(2);
     }
 
 
     let tipPerPerson
 
-    if (!Number.isFinite(tipPerPerson) && tipPercentage === 0 || tipPercentage === '0' || people === 0 || people === '0' || people === '' || people < 0 || isNaN(people)) {
-        console.log('heyooo falsy/zero tip')
+    if (!Number.isFinite(tipPerPerson) && tipPercentage === 0 || tipPercentage === '0' || tipPercentage < 0 || people === 0 || people === '0' || people === '' || people < 0 || isNaN(people) || bill < 0) {
         tipPerPerson = Number.parseFloat(0).toFixed(2);
     } else {
-        console.log('heyooo not falsy/zero tip')
         tipPerPerson = Number.parseFloat((tipPercentage*bill) / people).toFixed(2);
     }
 
@@ -81,7 +77,7 @@ function reset () {
     tipAmountPerPerson.value = 0;
     peopleNumberInputForm.value = 0;
     billInputForm.value = 0;
-    tipPercentageInput.value = 0;
+    tipPercentageInput.value = '';
 
 }
 
