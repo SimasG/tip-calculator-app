@@ -81,6 +81,8 @@ function reset () {
     tipAmountPerPerson.value = 0;
     peopleNumberInputForm.value = 0;
     billInputForm.value = 0;
+    tipPercentageInput.value = 0;
+
 }
 
 resetBtn.addEventListener('click', () => {
